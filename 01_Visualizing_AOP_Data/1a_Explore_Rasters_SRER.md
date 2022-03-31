@@ -69,7 +69,7 @@ We will work through a basic exercise consisting of the following steps:
 4) Add the AOP layer to the GEE Map
 5) Center on the region of interest
 
-We encourage you to follow along with this code chunks in this exercise in your code editor. To run the cells, you can click the `Run` button at the top of the code editor. Note that until the last two steps of this, you will not see the AOP data in the Interactive Map.
+We encourage you to follow along with this code chunks in this exercise in your code editor. To run the cells, you can click the **Run** button at the top of the code editor. Note that until the last two steps of this, you will not see the AOP data in the Interactive Map.
 
 1) Read in the SRER 2021 SDR image, using `ee.Image`. We will assign this image to a variable (`var`) called `SRER_SDR2021`.
 
@@ -79,7 +79,7 @@ var SRER_SDR2021 = ee.Image("projects/neon/D14_SRER/L3/DP3-30006-001_D14_SRER_SD
 
 2) Set the visualization parameters. 
 
-To do this we create a new variable (called `visParams`). This variable is applied to the layer and determines how and what is displayed. In this we are setting the RGB bands to display - for this exercise we are setting them to red, green, and blue portions of the spectrum in order to show a True Color Image. You can change these bands to show a False Color Image or any band combination of interest. Please refer to the lesson ___ for more background on band stacking.
+To do this we create a new variable (called `visParams`). This variable is applied to the layer and determines how and what is displayed. In this we are setting the RGB bands to display - for this exercise we are setting them to red, green, and blue portions of the spectrum in order to show a True Color Image. You can change these bands to show a False Color Image or any band combination of interest. You can refer to the lessons on [Multi-Band Rasters in R](https://www.neonscience.org/resources/learning-hub/tutorials/dc-multiband-rasters-r) or [RGB and False Color Images in Python](https://www.neonscience.org/resources/learning-hub/tutorials/neon-hsi-aop-functions-tiles-py) for more background on band stacking.
 
 ```javascript
 var visParams = {'min':2,'max':20,'gamma':0.9,'bands':['band053','band035','band019']};
