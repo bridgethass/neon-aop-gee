@@ -49,23 +49,26 @@ The table below summarizes the sites, products, and years of NEON AOP data that 
 | D16 WREF | 2017, 2018 | SDR, RGB, CHM, DSM, DTM |
 | D17 TEAK | 2017, 2018 | SDR, RGB, CHM, DSM, DTM |
 
-Get Started
+Get Started with Google Earth Engine
 ---
-In this exercise, we will look at hyperspectral data over the Santa Rita Experimental Range collected in 3 years between 2018 and 2021.
 
-Once you have set up your Google Earth Engine account you can navigate to the [earth engine code editor](https://code.earthengine.google.com/). The diagram below, from the [earth engine documentation](https://developers.google.com/earth-engine/guides/playground), shows the main components of the code editor. If you have used other programming languages such as R, Python, or Matlab, this should look fairly similar to other Integrated Development Environments (IDEs) you may have worked with.
+Once you have set up your Google Earth Engine account you can navigate to the [earth engine code editor](https://code.earthengine.google.com/). The diagram below, from the [earth engine documentation](https://developers.google.com/earth-engine/guides/playground), shows the main components of the code editor. If you have used other programming languages such as R, Python, or Matlab, this should look fairly similar to other Integrated Development Environments (IDEs) you may have worked with. The main difference is that this has an interactive map at the bottom, similar to Google Maps / Google Earth. This editor is fairly intuitive; we encourage you to play around with the interactive map, or explore the ee documentation, linked above, to gain familiarity with the various features.
 
 ![Earth Engine Code Editor Components](Code_editor_diagram.png)
 
+Read in and Visualize AOP Data
+---
+Now that you've gotten a sense for the Earth Engine code editor, we can pull in some AOP data! In this exercise, we will look at hyperspectral data over the Santa Rita Experimental Range collected in 3 years between 2018 and 2021.
+
 We will work through a basic exercise consisting of the following steps:
 
-1) Pull in an aop data set
-2) Set visualiation parameters
-3) Mask no data values
+1) Pull in an AOP hyperspetral data set
+2) Set visualization parameters
+3) Mask the no data values
 4) Add the AOP layer to the GEE Map
 5) Center on the region of interest
 
-You can follow along with this exercise in the code editor. 
+We encourage you to follow along with this code chunks in this exercise in the code editor. 
 
 1) Read in the SRER 2021 SDR image, using `ee.Image`. We will assign this image to a variable (`var`) called `SRER_SDR2021`.
 
@@ -130,3 +133,9 @@ Map.addLayer(SRER_SDR2021mask, visParams, 'SRER 2021');
 // Center the map on SRER & zoom to desired level
 Map.setCenter(-110.83549, 31.91068, 11);
 ```
+
+![SRER Layers](SRER_layers.png)
+
+![SRER Spectral Values](SRER_inspector.png)
+
+
