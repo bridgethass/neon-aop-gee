@@ -53,7 +53,9 @@ Get Started
 ---
 In this exercise, we will look at hyperspectral data over the Santa Rita Experimental Range collected in 3 years between 2018 and 2021.
 
-Once you have set up your Google Earth Engine account you can navigate to the code editor: https://code.earthengine.google.com/
+Once you have set up your Google Earth Engine account you can navigate to the [earth engine code editor](https://code.earthengine.google.com/). The diagram below, from the [earth engine documentation](https://developers.google.com/earth-engine/guides/playground), shows the main components of the code editor. If you have used other programming languages such as R, Python, or Matlab, this should look fairly similar to other Integrated Development Environments (IDEs) you may have worked with.
+
+![Earth Engine Code Editor Components](Code_editor_diagram.png)
 
 We will work through a basic exercise consisting of the following steps:
 
