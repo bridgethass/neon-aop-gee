@@ -107,7 +107,7 @@ Map.setCenter(-110.83549, 31.91068, 11);
 
 Putting it All Together
 ---
-The following code chunk runs all the steps we just broke down, and also adds in 2 more years of data (2018 and 2019). You can access this code [here](https://code.earthengine.google.com/9b442fa13116b2ae487ac8a78d45ba69), or copy and paste the code below into your GEE code editor. Click run to display the 3 years of SRER SDR data.
+The following code chunk runs all the steps we just broke down, and also adds in 2 more years of data (2018 and 2019). You can access this code [here](https://code.earthengine.google.com/9b442fa13116b2ae487ac8a78d45ba69), or copy and paste the code below into your GEE code editor. Click **Run** to add the 3 SDR data layers for each year.
 
 ```javascript
 // This script pulls in hyperspectral data over the Santa Rita Experimental Range (SRER)
