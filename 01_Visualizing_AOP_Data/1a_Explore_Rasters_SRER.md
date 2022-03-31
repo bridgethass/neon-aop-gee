@@ -1,10 +1,10 @@
-# Pull in and Explore AOP Rasters data at the Santa Rita Experimental Range (SRER)
+# Explore AOP Hyperspectral Data at the Santa Rita Experimental Range (SRER)
 
 ---
 
 Author: Bridget Hass
 
-Contributors: John Musinsky, Lukas Straube
+Contributors: John Musinsky, Tristan Goulden, Lukas Straube
 
 Last Updated: March 31, 2022
 
@@ -19,10 +19,43 @@ Requirements
 ---
 -	A gmail (@gmail.com) and Earth Engine accounts (https://earthengine.google.com/new_signup/)
 -	A basic understanding of the GEE code editor and the GEE JavaScript API. If you have never used GEE before, we recommend starting on the [google developers earth-engine page](https://developers.google.com/earth-engine/guides/getstarted) and working through some of the introductory tutorials.
----
 
+Background
+---
+AOP has published a subset of AOP (L3) data products for a handful of NEON sites on GEE. This data has been converted to Cloud Optimized Geotif (COG) format. NEON L3 lidar and derived spectral indices are avaialable in geotif raster format, so are relatively easy to add to GEE, however the hyperspectral data is available in hdf5 (hierarchical data format), and have been converted to the COG format prior to being added to GEE. 
+
+To interactively explore NEON data available on GEE, you can use the [aop-data-visualization](https://neon-aop.users.earthengine.app/view/aop-data-visualization) app created by AOP Scientist John Musinsky. 
+
+Data Availability & Access
+---
+The NEON data products that have been made available on GEE can be accessed through the `projects/neon` folder with an appended prefix of the Data Product ID, matching the [NEON data portal](https://data.neonscience.org/data-products/explore). The table below summarizes the prefixes to use for each data product.
+
+| Acronym | Data Product      | Data Product ID (Prefix) |
+|----------|------------|-------------------------|
+| SDR | Surface Directional Reflectance | DP3-30006-001_SDR |
+| RGB | Red Green Blue (Camera Imagery) | DP3-30010-001_RGB |
+| CHM | Canopy Height Model | DP3-30015-001_CHM |
+| DSM | Digital Surface Model | DP3-30024-001_DSM |
+| DTM | Digital Terrain Model | DP3-30024-001_DTM |
+
+The table below summarizes the sites, products, and years of NEON AOP data that can currently be accessed in GEE. The * indicates partial availability.
+
+| Domain/Site | Years      | Data Products        |
+|----------|------------|-------------------------|
+| D08 TALL | 2017, 2018 | SDR, RGB, CHM, DSM, DTM |
+| D11 CLBJ | 2017, 2019 | SDR, RGB, CHM, DSM, DTM |
+| D14 JORN | 2017, 2019 | SDR, RGB*, DSM, DTM|
+| D14 SRER | 2017, 2018, 2019, 2021* | SDR, RGB, CHM*, DSM, DTM|
+| D16 WREF | 2017, 2018 | SDR, RGB, CHM, DSM, DTM |
+| D17 TEAK | 2017, 2018 | SDR, RGB, CHM, DSM, DTM |
+
+Get Started
+---
+In this exercise, we will look at hyperspectral data over the Santa Rita Experimental Range collected in 3 years between 2018 and 2021.
 
 Once you have set up your Google Earth Engine account you can navigate to the code editor: https://code.earthengine.google.com/
+
+We will work through the following code chunk. You can copy and paste this into the GEE code editor.
 
 ```javascript
 // This script pulls in hyperspectral data over the Santa Rita Experimental Range (SRER)
