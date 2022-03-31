@@ -1,4 +1,4 @@
-# Explore AOP Hyperspectral Data at the Santa Rita Experimental Range (SRER)
+# Explore AOP Hyperspectral Data at the Santa Rita Experimental Range ([SRER](https://www.neonscience.org/field-sites/srer))
 
 ---
 
@@ -11,13 +11,13 @@ Last Updated: March 31, 2022
 Objectives
 ---
 - Introduce the Google Earth Engine (GEE) code editor 
-- Read in different AOP raster data sets at the NEON site [SRER](https://www.neonscience.org/field-sites/srer)
+- Read in different AOP raster data sets at the NEON site 
 - Read in multiple years of data and explore inter-annual differences
 - Explore GEE visualization and export options
 
 Requirements
 ---
--	A gmail (@gmail.com) and Earth Engine accounts (https://earthengine.google.com/new_signup/)
+-	A gmail (@gmail.com) and Earth Engine account. You can sign up for an Earth Engine account here: https://earthengine.google.com/new_signup/
 -	A basic understanding of the GEE code editor and the GEE JavaScript API. If you have never used GEE before, we recommend starting on the [google developers earth-engine page](https://developers.google.com/earth-engine/guides/getstarted) and working through some of the introductory tutorials.
 
 Background
@@ -68,7 +68,7 @@ We will work through a basic exercise consisting of the following steps:
 4) Add the AOP layer to the GEE Map
 5) Center on the region of interest
 
-We encourage you to follow along with this code chunks in this exercise in the code editor. 
+We encourage you to follow along with this code chunks in this exercise in your code editor. To run the cells, you can click the `Run` button at the top of the code editor. Note that until the last two steps of this, you will not see the AOP data in the Interactive Map.
 
 1) Read in the SRER 2021 SDR image, using `ee.Image`. We will assign this image to a variable (`var`) called `SRER_SDR2021`.
 
@@ -106,7 +106,7 @@ Map.setCenter(-110.83549, 31.91068, 11);
 
 Putting it All Together
 ---
-The following code chunk runs all the steps we just broke down, and also adds in 2 more years of data. You can copy and paste this into the GEE code editor and run to explore the 3 years of SRER SDR data.
+The following code chunk runs all the steps we just broke down, and also adds in 2 more years of data (2018 and 2019). You can access this code [here](https://code.earthengine.google.com/9b442fa13116b2ae487ac8a78d45ba69), or copy and paste the code below into your GEE code editor. Click run to display the 3 years of SRER SDR data.
 
 ```javascript
 // This script pulls in hyperspectral data over the Santa Rita Experimental Range (SRER)
@@ -134,7 +134,11 @@ Map.addLayer(SRER_SDR2021mask, visParams, 'SRER 2021');
 Map.setCenter(-110.83549, 31.91068, 11);
 ```
 
+Once you have the three years of data added, you can look at the different years one at a time by selecting each layer in the Layers box inside the Map:
+
 ![SRER Layers](SRER_layers.png)
+
+If you click anywhere inside the AOP map (where there is data), you will see the 426 spectral bands as a bar chart displayed for each of the layers in the Inspector window in the top-right window of the code editor. You can see the spectral values for different layers by clicking on the arrow to the left of the layer name (eg. SRER 2018). Note that these are just shown as band #s, and you can't tell from the chart what the wavelengths are. We will convert the band numbers to wavelengths in the next lesson!
 
 ![SRER Spectral Values](SRER_inspector.png)
 
